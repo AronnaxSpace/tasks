@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @task_set %>
+
+<div>
+  <%= link_to "Edit this task set", edit_task_set_path(@task_set) %> |
+  <%= link_to "Back to task sets", task_sets_path %>
+
+  <%= button_to "Destroy this task set", @task_set, method: :delete %>
+</div>
