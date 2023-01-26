@@ -29,7 +29,9 @@ en:
       task_set:
         tilte: Title
         description: Description
+        assignee: Assignee
       task:
         tilte: Title
         description: Description
         task_set: Set
+        assignee: Assignee

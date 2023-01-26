@@ -21,7 +21,7 @@ class TaskSetsController < ApplicationController
 
   # POST /task_sets or /task_sets.json
   def create
-    @task_set = TaskSet.new(task_set_params)
+    @task_set = current_user.task_sets.new(task_set_params)
 
     respond_to do |format|
       if @task_set.save
@@ -65,6 +65,6 @@ class TaskSetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def task_set_params
-      params.require(:task_set).permit(:title, :description)
+      params.require(:task_set).permit(:title, :description, :assignee_id)
     end
 end
