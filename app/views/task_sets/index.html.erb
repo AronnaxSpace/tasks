@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Task sets</h1>
+
+<div id="task_sets">
+  <% @task_sets.each do |task_set| %>
+    <%= render task_set %>
+    <p>
+      <%= link_to "Show this task set", task_set %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New task set", new_task_set_path %>
