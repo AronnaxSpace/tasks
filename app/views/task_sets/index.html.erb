@@ -1,14 +1,13 @@
-<p style="color: green"><%= notice %></p>
+<h1><%= t(".title") %></h1>
 
-<h1>Task sets</h1>
-
-<div id="task_sets">
+<div id="task_sets" class="space-y-4">
   <% @task_sets.each do |task_set| %>
-    <%= render task_set %>
-    <p>
-      <%= link_to "Show this task set", task_set %>
-    </p>
+    <%= link_to task_set, class: "card card-link" do %>
+      <div class="px-6 py-4">
+        <%= render task_set %>
+      </div>
+    <% end %>
   <% end %>
 </div>
 
-<%= link_to "New task set", new_task_set_path %>
+<%= link_to "New task set", new_task_set_path, class: "btn btn-primary mt-4" %>
