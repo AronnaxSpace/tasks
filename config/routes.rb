@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   }
 
   resources :task_sets, path: :sets
-  resources :tasks
+  resources :tasks do
+    resources :task_events, as: :events, except: %i[show edit update]
+  end
 end

@@ -1,0 +1,17 @@
+<%= form_for task_event, url: task_events_path(task), html: { class: "form" } do |form| %>
+  <%= render "shared/errors", record: task_event %>
+
+  <div class="form-field">
+    <%= form.label :start_at, style: "display: block" %>
+    <%= form.datetime_field :start_at %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :end_at, style: "display: block" %>
+    <%= form.datetime_field :end_at %>
+  </div>
+
+  <div>
+    <%= form.submit nil, class: "btn btn-primary" %>
+  </div>
+<% end %>

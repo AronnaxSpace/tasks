@@ -1,0 +1,4 @@
+<div id="<%= dom_id task_event %>">
+  <%= task_event.start_at %>
+  <%= button_to "X", task_event_path(task, task_event), method: :delete, class: "btn btn-sm btn-danger" %>
+</div>
