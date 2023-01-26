@@ -3,5 +3,5 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
-  resources :task_sets
+  resources :task_sets, path: :sets
 end
