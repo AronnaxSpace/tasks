@@ -13,7 +13,12 @@
 
   <div class="form-field">
     <%= form.label :task_set_id, style: "display: block" %>
-    <%= form.select :task_set_id, TaskSet.all.pluck(:title, :id), { include_blank: true }, class: "" %>
+    <%= form.select :task_set_id, TaskSet.pluck(:title, :id), { include_blank: true }, class: "" %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :assignee_id, style: "display: block" %>
+    <%= form.select :assignee_id, User.all.map { |user| [user.nickname, user.id] }, { include_blank: true, selected: current_user.id }, class: "" %>
   </div>
 
   <div>

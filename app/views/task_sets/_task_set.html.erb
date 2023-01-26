@@ -9,4 +9,10 @@
       <p><%= task_set.description %></p>
     </div>
   <% end %>
+  <% if task_set.assignee_id.present? %>
+    <div>
+      <h5><%= TaskSet.human_attribute_name(:assignee) %></h5>
+      <p><%= task_set.assignee.nickname %></p>
+    </div>
+  <% end %>
 </div>
