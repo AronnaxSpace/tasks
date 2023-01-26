@@ -3,8 +3,10 @@
     <h5><%= TaskSet.human_attribute_name(:title) %></h5>
     <p><%= task_set.title %></p>
   </div>
-  <div>
-    <h5><%= TaskSet.human_attribute_name(:description) %></h5>
-    <p><%= task_set.description %></p>
-  </div>
+  <% if task_set.description.present? %>
+    <div>
+      <h5><%= TaskSet.human_attribute_name(:description) %></h5>
+      <p><%= task_set.description %></p>
+    </div>
+  <% end %>
 </div>

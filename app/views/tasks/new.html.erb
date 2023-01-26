@@ -1,0 +1,7 @@
+<h1><%= t(".title") %></h1>
+
+<%= render "form", task: @task %>
+
+<div>
+  <%= link_to t("actions.back"), tasks_path, class: "link" %>
+</div>

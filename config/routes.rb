@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   }
 
   resources :task_sets, path: :sets
+  resources :tasks
 end
