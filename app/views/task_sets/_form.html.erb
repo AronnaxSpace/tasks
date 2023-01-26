@@ -1,27 +1,17 @@
-<%= form_with(model: task_set) do |form| %>
-  <% if task_set.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(task_set.errors.count, "error") %> prohibited this task_set from being saved:</h2>
+<%= form_with(model: task_set, class: "form") do |form| %>
+  <%= render "shared/errors", record: task_set %>
 
-      <ul>
-        <% task_set.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
+  <div class="form-field">
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
-  <div>
+  <div class="form-field">
     <%= form.label :description, style: "display: block" %>
     <%= form.text_area :description %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form-field">
+    <%= form.submit nil, class: "btn btn-primary" %>
   </div>
 <% end %>
