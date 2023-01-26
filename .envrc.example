@@ -1,0 +1,2 @@
+export TASKS_DATABASE_USERNAME=postgres
+export TASKS_DATABASE_PASSWORD=postgres
