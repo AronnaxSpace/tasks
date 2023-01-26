@@ -48,6 +48,10 @@ h5 {
   @apply inline-block text-white font-semibold py-3 px-5 rounded-full transition-all cursor-pointer;
 }
 
+.btn.btn-sm {
+  @apply py-1 px-2;
+}
+
 .btn.btn-primary {
   @apply bg-blue-500 hover:bg-blue-700;
 }
