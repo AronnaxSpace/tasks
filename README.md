@@ -1,24 +1,40 @@
-# README
+# Tasks
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Requirements
 
-Things you may want to cover:
+- Ruby 3.2.0
+- Bundler 2.4.5
+- PostgreSQL
+- Node.js
+- Yarn
 
-* Ruby version
+### Setup
 
-* System dependencies
+#### 1. Clone the repository
 
-* Configuration
+```bash
+git clone git@github.com:AronnaxSpace/tasks.git
+```
 
-* Database creation
+#### 2. Set environment variables
 
-* Database initialization
+- Install [direnv](https://direnv.net/)
+- Create an `.envrc` file and set the following variables: `TASKS_DATABASE_USERNAME`, `TASKS_DATABASE_PASSWORD`
 
-* How to run the test suite
+#### 3. Install dependecies
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+bundle && yarn
+```
 
-* Deployment instructions
+#### 4. Setup the database
 
-* ...
+```bash
+rails db:setup
+```
+
+#### 5. Start the application
+
+```bash
+foreman s -f Procfile.dev
+```
