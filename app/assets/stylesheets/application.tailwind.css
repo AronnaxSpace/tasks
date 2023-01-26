@@ -33,7 +33,7 @@ h5 {
 /* card START */
 
 .card {
-  @apply block max-w-sm border rounded overflow-hidden shadow-lg;
+  @apply block px-6 py-4 max-w-sm border rounded overflow-hidden shadow-lg;
 }
 
 .card.card-link {
@@ -68,8 +68,9 @@ h5 {
   @apply space-y-4 max-w-lg;
 }
 
-.form-field input:not([type=submit]),
-.form-field textarea {
+.form .form-field input:not([type=submit]),
+.form .form-field textarea,
+.form .form-field select {
   @apply block w-full px-3 py-2 font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none;
 }
 

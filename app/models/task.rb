@@ -1,6 +1,6 @@
-class TaskSet < ApplicationRecord
+class Task < ApplicationRecord
   # associations
-  has_many :tasks
+  belongs_to :task_set, optional: true
 
   # validations
   validates :title, presence: true
