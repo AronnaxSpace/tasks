@@ -1,0 +1,22 @@
+<%= form_with(model: task, class: "form") do |form| %>
+  <%= render "shared/errors", record: task %>
+
+  <div class="form-field">
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :task_set_id, style: "display: block" %>
+    <%= form.select :task_set_id, TaskSet.all.pluck(:title, :id), { include_blank: true }, class: "" %>
+  </div>
+
+  <div>
+    <%= form.submit nil, class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -3,9 +3,7 @@
 <div id="task_sets" class="space-y-4">
   <% @task_sets.each do |task_set| %>
     <%= link_to task_set, class: "card card-link" do %>
-      <div class="px-6 py-4">
-        <%= render task_set %>
-      </div>
+      <%= render task_set %>
     <% end %>
   <% end %>
 </div>

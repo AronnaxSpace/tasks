@@ -12,6 +12,13 @@ en:
       title: New task set
     edit:
       title: Editing task set
+  tasks:
+    index:
+      title: Tasks
+    new:
+      title: New task
+    edit:
+      title: Editing task
 
   activerecord:
     models:
@@ -22,3 +29,7 @@ en:
       task_set:
         tilte: Title
         description: Description
+      task:
+        tilte: Title
+        description: Description
+        task_set: Set
