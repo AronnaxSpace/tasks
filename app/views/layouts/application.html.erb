@@ -11,6 +11,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container px-3 m-auto">
+      <%= render "shared/flashes" %>
+      <%= yield %>
+    </div>
   </body>
 </html>

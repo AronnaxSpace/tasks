@@ -1,12 +1,10 @@
-<div id="<%= dom_id task_set %>">
-  <p>
-    <strong>Title:</strong>
-    <%= task_set.title %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= task_set.description %>
-  </p>
-
+<div id="<%= dom_id task_set %>" class="space-y-2">
+  <div>
+    <h5><%= TaskSet.human_attribute_name(:title) %></h5>
+    <p><%= task_set.title %></p>
+  </div>
+  <div>
+    <h5><%= TaskSet.human_attribute_name(:description) %></h5>
+    <p><%= task_set.description %></p>
+  </div>
 </div>
