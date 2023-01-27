@@ -1,24 +1,27 @@
-<div id="<%= dom_id task %>" class="space-y-2">
+<div id="<%= dom_id task %>" class="card space-y-2">
   <div>
     <h5><%= Task.human_attribute_name(:title) %></h5>
     <p><%= task.title %></p>
   </div>
-  <% if task.description.present? %>
-    <div>
-      <h5><%= Task.human_attribute_name(:description) %></h5>
-      <p><%= task.description %></p>
-    </div>
+  <% if action_name == "show" %>
+    <% if task.description.present? %>
+      <div>
+        <h5><%= Task.human_attribute_name(:description) %></h5>
+        <p><%= task.description %></p>
+      </div>
+    <% end %>
+    <% if task.task_set_id.present? %>
+      <div>
+        <h5><%= Task.human_attribute_name(:task_set) %></h5>
+        <p><%= task.task_set.title %></p>
+      </div>
+    <% end %>
+    <% if task.assignee_id.present? %>
+      <div>
+        <h5><%= Task.human_attribute_name(:assignee) %></h5>
+        <p><%= task.assignee.nickname %></p>
+      </div>
+    <% end %>
   <% end %>
-  <% if task.task_set_id.present? %>
-    <div>
-      <h5><%= Task.human_attribute_name(:task_set) %></h5>
-      <p><%= task.task_set.title %></p>
-    </div>
-  <% end %>
-  <% if task.assignee_id.present? %>
-    <div>
-      <h5><%= Task.human_attribute_name(:assignee) %></h5>
-      <p><%= task.assignee.nickname %></p>
-    </div>
-  <% end %>
+  <%= link_to "view", task, class: "link" %>
 </div>
