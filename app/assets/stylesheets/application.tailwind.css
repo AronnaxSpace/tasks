@@ -12,6 +12,10 @@ h2 {
   @apply font-medium leading-tight text-4xl mt-0 mb-2;
 }
 
+h3 {
+  @apply font-medium leading-tight text-3xl mt-0 mb-2;
+}
+
 h5 {
   @apply text-gray-500 font-semibold;
 }

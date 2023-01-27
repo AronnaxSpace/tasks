@@ -1,6 +1,0 @@
-<% if task_event.persisted? %>
-  <%= turbo_stream.prepend "task_events_frame", partial: "task_events/task_event", locals: { task_event: task_event } %>
-  <%= turbo_stream.remove "new_task_event" %>
-<% else %>
-  <%= turbo_stream.replace "new_task_event", partial: "form", locals: { task_event: task_event } %>
-<% end %>

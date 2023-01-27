@@ -1,0 +1,5 @@
+<% if task_performance.errors.any? %>
+  <%= turbo_stream.replace "edit_task_performance_#{task_performance.id}", partial: "complete_form", locals: { task_performance: task_performance } %>
+<% else %>
+  <%= turbo_stream.remove "task_performance_#{task_performance.id}" %>
+<% end %>

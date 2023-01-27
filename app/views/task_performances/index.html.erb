@@ -1,0 +1,7 @@
+<%= turbo_frame_tag "task_performances_frame" do %>
+  <% if @task_performances.any? %>
+    <%= render @task_performances %>
+  <% else %>
+    <p id="task_performances_empty">There are no <%= params[:scope] %> task events at the moment.</p>
+  <% end %>
+<% end %>
