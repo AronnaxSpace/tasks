@@ -6,3 +6,12 @@
 
   <%= button_to t("actions.destroy"), @task, method: :delete, class: "btn btn-danger mt-2" %>
 </div>
+
+<%= link_to "New Task event",
+            new_task_event_path(@task),
+            data: { turbo_frame: "new_task_event_frame" },
+            class: "btn btn-primary" %>
+
+<%= turbo_frame_tag "new_task_event_frame" %>
+
+<%= turbo_frame_tag "task_events_frame", src: task_events_path(@task) %>
