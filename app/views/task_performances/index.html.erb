@@ -1,4 +1,6 @@
 <%= turbo_frame_tag "task_performances_frame" do %>
+  <h3><%= t(".title") %></h3>
+
   <% if @task_performances.any? %>
     <%= render @task_performances %>
   <% else %>

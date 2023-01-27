@@ -1,4 +1,4 @@
-<div id="new_performance_actions">
+<div id="new_performance_actions" class="mb-4" data-controller="visibility eraser">
   <%= link_to "New Task event",
                   new_task_performance_path(@task),
                   data: { turbo_frame: "new_task_performance_frame", action: "click->visibility#toggle touch->visibility#toggle", visibility_target: "dymanic" },
@@ -9,4 +9,6 @@
           data-visibility-target="dymanic">
     Close
   </button>
+
+  <%= turbo_frame_tag "new_task_performance_frame", data: { eraser_target: "erasable" } %>
 </div>
