@@ -1,0 +1,8 @@
+<% if task_performance.persisted? %>
+  <%= turbo_stream.prepend "task_performances_frame", partial: "task_performances/task_performance", locals: { task_performance: task_performance } %>
+  <%= turbo_stream.replace "new_performance_actions", partial: "tasks/new_performance_actions" %>
+  <%= turbo_stream.remove "new_task_performance" %>
+  <%= turbo_stream.remove "task_performances_empty" %>
+<% else %>
+  <%= turbo_stream.replace "new_task_performance", partial: "form", locals: { task_performance: task_performance } %>
+<% end %>
