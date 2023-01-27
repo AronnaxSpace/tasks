@@ -1,9 +1,27 @@
-<div id="<%= dom_id task_performance %>">
-  <%= task_performance.start_at %>
+<div id="<%= dom_id task_performance %>" class="card card-lg space-y-4">
+  <div class="flex justify-between">
+    <div>
+      <h5><%= TaskPerformance.human_attribute_name(:start_at) %></h5>
+      <p class="text-xs italic">
+        <%= task_performance.start_at.strftime("%Y-%m-%d") %><br>
+        <%= task_performance.start_at.strftime("at %I:%M%p %Z") %>
+      </p>
+    </div>
+    <div class="text-right">
+      <h5><%= TaskPerformance.human_attribute_name(:end_at) %></h5>
+      <p class="text-xs italic">
+        <%= task_performance.end_at.strftime("%Y-%m-%d") %><br>
+        <%= task_performance.end_at.strftime("at %I:%M%p %Z") %>
+      </p>
+    </div>
+  </div>
 
   <% if task_performance.active? %>
     <%= render "complete_form", task_performance: task_performance %>
   <% end %>
 
-  <%= button_to "X", task_performance_path(task, task_performance), method: :delete, class: "btn btn-sm btn-danger" %>
+  <%= button_to "Delete", task_performance_path(task, task_performance),
+                          method: :delete,
+                          class: "btn btn-danger",
+                          data: { turbo_confirm: "Are you sure?" } %>
 </div>
