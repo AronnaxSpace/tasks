@@ -1,0 +1,10 @@
+<%= form_for task_performance, url: complete_task_performance_path(task_performance.task, task_performance), method: :patch, html: { class: "form" } do |form| %>
+  <%= render "shared/errors", record: task_performance %>
+
+  <div class="form-field">
+    <%= form.label :comment, style: "display: block" %>
+    <%= form.text_area :comment %>
+  </div>
+
+  <%= form.submit "Complete", class: "btn btn-primary" %>
+<% end %>

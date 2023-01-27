@@ -7,11 +7,17 @@
   <%= button_to t("actions.destroy"), @task, method: :delete, class: "btn btn-danger mt-2" %>
 </div>
 
-<%= link_to "New Task event",
-            new_task_event_path(@task),
-            data: { turbo_frame: "new_task_event_frame" },
-            class: "btn btn-primary" %>
+<div data-controller="eraser">
+  <div data-controller="visibility">
+    <%= render "new_performance_actions" %>
+  </div>
 
-<%= turbo_frame_tag "new_task_event_frame" %>
+  <%= turbo_frame_tag "new_task_performance_frame", data: { eraser_target: "erasable" } %>
 
-<%= turbo_frame_tag "task_events_frame", src: task_events_path(@task) %>
+  <div class="space-y-4">
+    <div>
+      <h3>Active task events</h3>
+      <%= turbo_frame_tag "task_performances_frame", src: task_performances_path(@task, scope: :active) %>
+    </div>
+  </div>
+</div>

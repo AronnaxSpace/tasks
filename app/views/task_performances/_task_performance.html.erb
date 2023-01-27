@@ -1,0 +1,9 @@
+<div id="<%= dom_id task_performance %>">
+  <%= task_performance.start_at %>
+
+  <% if task_performance.active? %>
+    <%= render "complete_form", task_performance: task_performance %>
+  <% end %>
+
+  <%= button_to "X", task_performance_path(task, task_performance), method: :delete, class: "btn btn-sm btn-danger" %>
+</div>

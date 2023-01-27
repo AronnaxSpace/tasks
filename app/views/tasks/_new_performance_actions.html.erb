@@ -1,0 +1,12 @@
+<div id="new_performance_actions">
+  <%= link_to "New Task event",
+                  new_task_performance_path(@task),
+                  data: { turbo_frame: "new_task_performance_frame", action: "click->visibility#toggle touch->visibility#toggle", visibility_target: "dymanic" },
+                  class: "btn btn-primary" %>
+  <button class="btn btn-danger"
+          style="display: none"
+          data-action="click->visibility#toggle touch->visibility#toggle click->eraser#erase touch->eraser#erase"
+          data-visibility-target="dymanic">
+    Close
+  </button>
+</div>
