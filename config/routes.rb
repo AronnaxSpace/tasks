@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
   resources :task_sets, path: :sets
   resources :tasks do
-    resources :task_events, as: :events, except: %i[show edit update]
+    resources :task_performances, as: :performances, except: %i[show edit update] do
+      member do
+        patch :complete
+      end
+    end
   end
 end
