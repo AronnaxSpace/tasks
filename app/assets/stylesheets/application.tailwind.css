@@ -8,6 +8,10 @@ h1 {
   @apply font-medium leading-tight text-5xl mt-0 mb-2;
 }
 
+h2 {
+  @apply font-medium leading-tight text-4xl mt-0 mb-2;
+}
+
 h5 {
   @apply text-gray-500 font-semibold;
 }
@@ -17,7 +21,7 @@ h5 {
 /* flashs START */
 
 .flash {
-  @apply border px-4 py-3 rounded relative;
+  @apply border px-4 py-3 my-3 rounded relative;
 }
 
 .flash.flash-notice {

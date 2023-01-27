@@ -5,6 +5,14 @@ en:
     back: Back
     back_to: Back to %{page}
     destroy: Destroy
+  dashboard:
+    my_tasks:
+      title: My tasks
+      epmty: Nothing to do, you currently do not have any task.
+    tasks:
+      title: All Tasks
+      epmty: You have not created any task yet.
+      create_first_task: Create your first task
   task_sets:
     index:
       title: Task sets
@@ -19,7 +27,6 @@ en:
       title: New task
     edit:
       title: Editing task
-
   activerecord:
     models:
       task_set:
