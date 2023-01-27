@@ -27,6 +27,9 @@ en:
       title: New task
     edit:
       title: Editing task
+  task_performances:
+    index:
+      title: Task performances
   activerecord:
     models:
       task_set:
@@ -42,3 +45,6 @@ en:
         description: Description
         task_set: Set
         assignee: Assignee
+      task_performance:
+        start_at: Start
+        end_at: Deadline
