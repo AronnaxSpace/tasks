@@ -1,0 +1,16 @@
+<header class="py-4 bg-gray-100 mb-3">
+  <div class="container px-3 m-auto flex justify-between items-center">
+    <nav class="space-x-4">
+      <%= link_to "Home", root_path, class: "link" %>
+      <% if user_signed_in? %>
+        <%= link_to "Tasks", tasks_path, class: "link" %>
+      <% end %>
+    </nav>
+
+    <% if user_signed_in? %>
+      <%= button_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo: false }, class: "btn btn-sm btn-danger" %>
+    <% else %>
+      <%= link_to "Sign in", user_session_path, class: "btn btn-sm btn-primary" %>
+    <% end %>
+  </div>
+</header>

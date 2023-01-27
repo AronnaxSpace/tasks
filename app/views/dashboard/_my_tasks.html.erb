@@ -1,0 +1,9 @@
+<div>
+  <h2><%= t(".title") %></h2>
+
+  <% if @my_tasks.any? %>
+    <%= render @my_tasks %>
+  <% else %>
+    <%= t(".epmty") %>
+  <% end %>
+</div>

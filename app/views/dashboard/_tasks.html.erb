@@ -1,0 +1,13 @@
+<div>
+  <h2><%= t(".title") %></h2>
+
+  <% if @tasks.any? %>
+    <%= render @tasks %>
+  <% else %>
+    <%= t(".epmty") %>
+
+    <br>
+
+    <%= link_to t(".create_first_task"), new_task_path, class: "btn btn-primary" %>
+  <% end %>
+</div>
