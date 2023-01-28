@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::Base
+  include Pundit::Authorization
+
   before_action :authenticate_user!
+
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   private
 
@@ -18,5 +22,9 @@ class ApplicationController < ActionController::Base
           aronnax_oauth_client, current_user.aronnax_access_token
         )
       end
+  end
+
+  def user_not_authorized
+    redirect_to root_path, alert: t('not_authorized')
   end
 end
