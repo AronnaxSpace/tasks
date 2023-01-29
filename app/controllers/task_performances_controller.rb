@@ -1,4 +1,6 @@
 class TaskPerformancesController < ApplicationController
+  before_action :authorize_access, only: %i[destroy complete]
+
   def index
     @task_performances = task.performances
 
@@ -42,6 +44,10 @@ class TaskPerformancesController < ApplicationController
 
   def task_performance_complete_params
     params.require(:task_performance).permit(:comment)
+  end
+
+  def authorize_access
+    authorize task_performance
   end
 
   def task
