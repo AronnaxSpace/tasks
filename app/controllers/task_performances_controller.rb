@@ -1,5 +1,6 @@
 class TaskPerformancesController < ApplicationController
   before_action :authorize_access, only: %i[destroy complete]
+  before_action :authorize_task_owner, only: %i[new create]
 
   def index
     @task_performances = task.performances
@@ -32,6 +33,8 @@ class TaskPerformancesController < ApplicationController
   end
 
   def complete
+    redirect_to tasks_path, alert: t('.failure') and return unless task_performance.pending?
+
     task_performance.comment = task_performance_complete_params[:comment]
     task_performance.complete!
   end
@@ -48,6 +51,10 @@ class TaskPerformancesController < ApplicationController
 
   def authorize_access
     authorize task_performance
+  end
+
+  def authorize_task_owner
+    redirect_to task_path(task) unless current_user == task.user
   end
 
   def task

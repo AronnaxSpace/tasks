@@ -45,7 +45,7 @@ h5 {
 }
 
 .card.card-lg {
-  @apply max-w-lg;
+  @apply max-w-xl;
 }
 
 .card.card-link {
@@ -85,7 +85,7 @@ h5 {
 /* form START */
 
 .form {
-  @apply space-y-4 max-w-lg;
+  @apply space-y-4 max-w-xl;
 }
 
 .form .form-field input:not([type=submit]),
