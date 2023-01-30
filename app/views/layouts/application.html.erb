@@ -10,11 +10,16 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
-    <%= render "layouts/header" %>
-    <div class="container px-3 m-auto pb-3">
-      <%= render "shared/flashes" %>
-      <%= yield %>
+  <body class="h-screen">
+    <div class="h-full container m-auto flex border-x" data-controller="sidenav">
+      <%= render "shared/sidenav" %>
+      <div class="flex-grow overflow-y-auto">
+        <%= render "layouts/header" %>
+        <div class="p-3">
+          <%= render "shared/flashes" %>
+          <%= yield %>
+        </div>
+      </div>
     </div>
   </body>
 </html>
