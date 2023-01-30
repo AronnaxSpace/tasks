@@ -1,11 +1,19 @@
 en:
   not_authorized: You are not authorized to perform this action.
+
   actions:
     show: Show
     edit: Edit
     back: Back
     back_to: Back to %{page}
     destroy: Destroy
+
+  shared:
+    sidenav:
+      dashboard: Dashboard
+      tasks: Tasks
+      sign_out: Sign out
+
   dashboard:
     my_tasks:
       title: My tasks
@@ -14,6 +22,7 @@ en:
       title: All Tasks
       epmty: You have not created any task yet.
       create_first_task: Create your first task
+
   task_sets:
     index:
       title: Task sets
@@ -21,6 +30,7 @@ en:
       title: New task set
     edit:
       title: Editing task set
+
   tasks:
     index:
       title: Tasks
@@ -31,6 +41,7 @@ en:
   task_performances:
     index:
       title: Task performances
+
   activerecord:
     models:
       task_set:

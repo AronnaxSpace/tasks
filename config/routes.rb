@@ -13,4 +13,5 @@ Rails.application.routes.draw do
       end
     end
   end
+  get 'notifications/index'
 end
