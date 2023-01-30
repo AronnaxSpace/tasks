@@ -7,5 +7,8 @@ import { application } from "./application"
 import EraserController from "./eraser_controller"
 application.register("eraser", EraserController)
 
+import SidenavController from "./sidenav_controller"
+application.register("sidenav", SidenavController)
+
 import VisibilityController from "./visibility_controller"
 application.register("visibility", VisibilityController)
