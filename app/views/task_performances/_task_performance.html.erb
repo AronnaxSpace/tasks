@@ -16,12 +16,14 @@
     </div>
   </div>
 
-  <% if task_performance.active? %>
+  <% if task_performance.active? && policy(task_performance).complete? %>
     <%= render "complete_form", task_performance: task_performance %>
   <% end %>
 
-  <%= button_to "Delete", task_performance_path(task, task_performance),
-                          method: :delete,
-                          class: "btn btn-danger",
-                          data: { turbo_confirm: "Are you sure?" } %>
+  <% if policy(task_performance).destroy? %>
+    <%= button_to "Delete", task_performance_path(task, task_performance),
+                            method: :delete,
+                            class: "btn btn-danger",
+                            data: { turbo_confirm: "Are you sure?" } %>
+  <% end %>
 </div>
