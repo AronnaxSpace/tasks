@@ -41,6 +41,8 @@ en:
   task_performances:
     index:
       title: Task performances
+    complete:
+      failure: Task performance does not exist or has expired.
 
   activerecord:
     models:
