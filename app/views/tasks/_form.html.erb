@@ -18,7 +18,7 @@
 
   <div class="form-field">
     <%= form.label :assignee_id, style: "display: block" %>
-    <%= form.select :assignee_id, User.all.map { |user| [user.nickname, user.id] }, { include_blank: true, selected: current_user.id }, class: "" %>
+    <%= form.select :assignee_id, User.all.map { |user| [user.nickname, user.id] }, { include_blank: true, selected: task.assignee_id || current_user.id }, class: "" %>
   </div>
 
   <div>
