@@ -40,15 +40,21 @@ en:
       title: Editing task
     completed_performances:
       title: Completed performances
+      all_performances: All performances
     completed_performance:
       completed_at: completed at
   task_performances:
     index:
+      go_to_task: Go to task
       note: Time in UTC.
       active_performances_title: Active performances
-      active_performances_empty: There are no active task events at the moment.
+      active_performances_empty: There are no active task performances at the moment.
       future_performances_title: Furute performances
-      future_performances_empty: There are no future task events at the moment.
+      future_performances_empty: There are no future task performances at the moment.
+      completed_performances_title: Completed performances
+      completed_performances_empty: There are no completed task performances at the moment.
+      expired_performances_title: Expired performances
+      expired_performances_empty: There are no completed task performances at the moment.
     complete:
       failure: Task performance does not exist or has expired.
 
@@ -70,3 +76,4 @@ en:
       task_performance:
         start_at: Start
         end_at: Deadline
+        comment: Comment

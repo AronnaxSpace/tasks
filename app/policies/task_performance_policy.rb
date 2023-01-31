@@ -1,5 +1,5 @@
 class TaskPerformancePolicy < ApplicationPolicy
   def complete?
-    user == record.task.assignee
+    record.active? && user == record.task.assignee
   end
 end
