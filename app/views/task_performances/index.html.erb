@@ -1,3 +1,7 @@
+<%= link_to t(".go_to_task"), task_path(task), class: "btn btn-primary mb-4" %>
+
+<br>
+
 <%= turbo_frame_tag "task_performances_frame" do %>
   <span class="text-xs">* <%= t(".note") %></span>
   <div class="space-y-4">
@@ -23,3 +27,29 @@
     </div>
   </div>
 <% end %>
+<div class="space-y-4 mt-4">
+  <div>
+    <h3><%= t(".completed_performances_title") %></h3>
+    <div class="space-y-4">
+      <% if @completed_performances.any? %>
+        <%= render @completed_performances, collection: @completed_performances %>
+      <% else %>
+        <p id="completed_performances_empty"><%= t(".completed_performances_empty") %></p>
+      <% end %>
+    </div>
+  </div>
+  <div>
+    <h3><%= t(".expired_performances_title") %></h3>
+    <div class="space-y-4">
+      <% if @expired_performances.any? %>
+        <%= render @expired_performances, collection: @expired_performances %>
+      <% else %>
+        <p id="expired_performances_empty"><%= t(".expired_performances_empty") %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<%= link_to t(".go_to_task"), task_path(task), class: "btn btn-primary" %>

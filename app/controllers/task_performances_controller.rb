@@ -5,6 +5,8 @@ class TaskPerformancesController < ApplicationController
   def index
     @active_performances = task.performances.active
     @future_performances = task.performances.future
+    @completed_performances = task.performances.completed
+    @expired_performances = task.performances.expired
   end
 
   def new

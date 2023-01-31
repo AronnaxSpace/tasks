@@ -16,7 +16,16 @@
     </div>
   </div>
 
-  <% if task_performance.active? && policy(task_performance).complete? %>
+  <% if task_performance.comment.present? %>
+    <div>
+      <h5 class="mb-1"><%= TaskPerformance.human_attribute_name(:comment) %></h5>
+      <div class="border rounded-xl px-4 py-2 italic">
+        <%= task_performance.comment %>
+      </div>
+    </div>
+  <% end %>
+
+  <% if policy(task_performance).complete? %>
     <%= render "complete_form", task_performance: task_performance %>
   <% end %>
 
