@@ -44,8 +44,11 @@ en:
       completed_at: completed at
   task_performances:
     index:
-      title: Active performances
-      sub_title: Only started performances are displayed here. Note, that time is in UTC.
+      note: Time in UTC.
+      active_performances_title: Active performances
+      active_performances_empty: There are no active task events at the moment.
+      future_performances_title: Furute performances
+      future_performances_empty: There are no future task events at the moment.
     complete:
       failure: Task performance does not exist or has expired.
 

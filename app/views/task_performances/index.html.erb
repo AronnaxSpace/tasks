@@ -1,10 +1,25 @@
 <%= turbo_frame_tag "task_performances_frame" do %>
-  <h3><%= t(".title") %></h3>
-  <p><%= t(".sub_title") %></p>
-
-  <% if @task_performances.any? %>
-    <%= render @task_performances %>
-  <% else %>
-    <p id="task_performances_empty">There are no <%= params[:scope] %> task events at the moment.</p>
-  <% end %>
+  <span class="text-xs">* <%= t(".note") %></span>
+  <div class="space-y-4">
+    <div>
+      <h3><%= t(".active_performances_title") %></h3>
+      <%= turbo_frame_tag "active_performances_frame", class: "space-y-4" do %>
+        <% if @active_performances.any? %>
+          <%= render @active_performances, collection: @active_performances %>
+        <% else %>
+          <p id="active_performances_empty"><%= t(".active_performances_empty") %></p>
+        <% end %>
+      <% end %>
+    </div>
+    <div>
+      <h3><%= t(".future_performances_title") %></h3>
+      <%= turbo_frame_tag "future_performances_frame", class: "space-y-4" do %>
+        <% if @future_performances.any? %>
+          <%= render @future_performances, collection: @future_performances %>
+        <% else %>
+          <p id="future_performances_empty"><%= t(".future_performances_empty") %></p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 <% end %>
