@@ -1,6 +1,8 @@
 class TaskPerformancesController < ApplicationController
+  include TaskScoped
+
   before_action :authorize_access, only: %i[destroy complete]
-  before_action :authorize_task_owner, only: %i[new create]
+  before_action :check_task_owner, only: %i[new create]
 
   def index
     @active_performances = task.performances.active
@@ -44,15 +46,6 @@ class TaskPerformancesController < ApplicationController
   def authorize_access
     authorize task_performance
   end
-
-  def authorize_task_owner
-    redirect_to task_path(task) unless current_user == task.user
-  end
-
-  def task
-    @task ||= Task.find(params[:task_id])
-  end
-  helper_method :task
 
   def task_performance
     @task_performance ||= task.performances.find_by!(id: params[:id])
