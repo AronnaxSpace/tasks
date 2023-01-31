@@ -75,4 +75,9 @@ class TasksController < ApplicationController
   def task_params
     params.require(:task).permit(:title, :description, :task_set_id, :assignee_id)
   end
+
+  def completed_performances
+    @completed_performances ||= @task.performances.completed.order(completed_at: :desc)
+  end
+  helper_method :completed_performances
 end
