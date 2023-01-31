@@ -3,18 +3,8 @@ class TaskPerformancesController < ApplicationController
   before_action :authorize_task_owner, only: %i[new create]
 
   def index
-    @task_performances = task.performances
-
-    case params[:scope]
-    when 'active'
-      @task_performances = @task_performances.active
-    when 'completed'
-      @task_performances = @task_performances.completed
-    when 'future'
-      @task_performances = @task_performances.future
-    when 'past'
-      @task_performances = @task_performances.past
-    end
+    @active_performances = task.performances.active
+    @future_performances = task.performances.future
   end
 
   def new

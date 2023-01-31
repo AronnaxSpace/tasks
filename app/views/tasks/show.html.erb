@@ -33,7 +33,7 @@
       <% if current_user == @task.user %>
         <%= render "new_performance_actions" %>
       <% end %>
-      <%= turbo_frame_tag "task_performances_frame", src: task_performances_path(@task, scope: :active), class: "space-y-4" %>
+      <%= turbo_frame_tag "task_performances_frame", src: task_performances_path(@task) %>
     </div>
   </div>
   <div class="lg:min-w-[300px]">
