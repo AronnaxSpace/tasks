@@ -77,7 +77,7 @@ class TasksController < ApplicationController
   end
 
   def completed_performances
-    @completed_performances ||= @task.performances.completed.order(completed_at: :desc)
+    @completed_performances ||= @task.performances.completed.order(completed_at: :desc).limit(5)
   end
   helper_method :completed_performances
 end
