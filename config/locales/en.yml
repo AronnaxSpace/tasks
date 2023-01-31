@@ -38,6 +38,10 @@ en:
       title: New task
     edit:
       title: Editing task
+    completed_performances:
+      title: Completed performances
+    completed_performance:
+      completed_at: completed at
   task_performances:
     index:
       title: Task performances
