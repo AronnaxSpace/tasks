@@ -1,0 +1,7 @@
+<h4><%= t(".title") %></h4>
+
+<%= turbo_frame_tag :completed_performances_frame, class: "space-y-3" do %>
+  <% completed_performances.each do |performance| %>
+    <%= render "tasks/completed_performance", performance: performance %>
+  <% end %>
+<% end %>
