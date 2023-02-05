@@ -14,7 +14,6 @@ class TaskPerformance < ApplicationRecord
 
   # scopes
   scope :active, -> { where(aasm_state: 'pending').where('start_at <= :now and end_at > :now', now: Time.current) }
-  scope :completed, -> { where(aasm_state: 'completed').where('start_at <= :now and end_at > :now', now: Time.current) }
   scope :future, -> { where('start_at > :now', now: Time.current) }
   scope :past, -> { where('end_at <= :now', now: Time.current) }
 
