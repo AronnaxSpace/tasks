@@ -2,7 +2,7 @@
 
 ### Requirements
 
-- Ruby 3.2.0
+- Ruby 3.2.1
 - Bundler 2.4.5
 - PostgreSQL
 - Node.js
