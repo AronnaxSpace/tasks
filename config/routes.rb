@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
+  root 'dashboard#index'
+
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
-  root 'dashboard#index'
+  authenticated :user do
+    if defined?(Sidekiq)
+      require 'sidekiq/web'
+      mount Sidekiq::Web => '/sidekiq'
+    end
+  end
 
   resources :task_sets, path: :sets
   resources :tasks do

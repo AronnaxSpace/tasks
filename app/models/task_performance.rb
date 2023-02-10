@@ -9,7 +9,7 @@ class TaskPerformance < ApplicationRecord
   validates :start_at, presence: true
   validates :end_at, presence: true
   validates :comment, presence: true, if: :completed?, length: { in: 20..1_000 }
-  validate :ends_in_the_future
+  validate :ends_in_the_future, on: :create
   validate :ends_later_than_starts
 
   # scopes
