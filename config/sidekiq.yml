@@ -1,0 +1,17 @@
+:verbose: false
+:concurrency: 10
+:timeout: 25
+
+:queues:
+  - default
+
+production:
+  :concurrency: 25
+staging:
+  :concurrency: 15
+
+:scheduler:
+  :schedule:
+    expire_task_performances:
+      cron: '0 */2 * * *' # every 2 hours
+      class: ExpireTaskPerformancesJob
