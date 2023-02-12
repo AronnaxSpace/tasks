@@ -7,4 +7,6 @@ class Task < ApplicationRecord
 
   # validations
   validates :title, presence: true
+
+  accepts_nested_attributes_for :performances
 end

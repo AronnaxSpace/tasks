@@ -17,6 +17,8 @@ class TaskPerformance < ApplicationRecord
   scope :future, -> { where('start_at > :now', now: Time.current) }
   scope :past, -> { where('end_at <= :now', now: Time.current) }
 
+  before_validation :check_user, on: :create
+
   aasm timestamps: true do
     state :pending, initial: true
     state :completed, :canceled, :expired
@@ -38,6 +40,8 @@ class TaskPerformance < ApplicationRecord
     pending? && start_at <= Time.current && end_at > Time.current
   end
 
+  private
+
   def ends_in_the_future
     return unless end_at
     return if end_at > Time.current
@@ -50,5 +54,11 @@ class TaskPerformance < ApplicationRecord
     return if end_at > start_at
 
     errors.add(:base, 'Incorrect timestamps')
+  end
+
+  def check_user
+    return if user_id.present?
+
+    self.user_id = task.user_id
   end
 end
