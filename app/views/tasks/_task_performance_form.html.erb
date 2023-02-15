@@ -1,0 +1,21 @@
+<div class="space-y-4" data-duplicator-target="container">
+  <% if task.performances.any? %>
+    <% task.performances.each_with_index do |performance, index| %>
+      <% if index == 0 %>
+        <%= render "task_performance_form_block", performance: performance %>
+      <% else %>
+        <div class="p-4 bg-gray-100 border rounded-xl" data-controller="eraser" data-eraser-target="erasable">
+          <div class="duplicate-eraser flex justify-end">
+            <button type="button" class="btn btn-sm btn-danger w-8 h-8" data-action="click->eraser#erase touch->eraser#erase">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <%= render "task_performance_form_fields", performance: performance %>
+        </div>
+      <% end %>
+    <% end %>
+  <% else %>
+    <% performance_struct = Struct.new(:start_at, :end_at) %>
+    <%= render "task_performance_form_block", performance: performance_struct.new(Time.current, Time.current + 2.hours) %>
+  <% end %>
+</div>

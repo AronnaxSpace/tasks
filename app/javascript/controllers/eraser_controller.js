@@ -5,7 +5,7 @@ export default class extends Controller {
 
   erase() {
     this.erasableTargets.forEach(target => {
-      target.innerHTML = "";
+      target.remove();
     });
   }
 }

@@ -21,7 +21,14 @@
     <%= form.select :assignee_id, User.all.map { |user| [user.nickname, user.id] }, { include_blank: true, selected: task.assignee_id || current_user.id }, class: "" %>
   </div>
 
-  <div>
-    <%= form.submit nil, class: "btn btn-primary" %>
+  <div data-controller="duplicator">
+    <%= render "task_performance_form", task: task %>
+
+    <div class="flex justify-between mt-4">
+      <button type="button" class="btn btn-success" data-action="click->duplicator#duplicate touch->duplicator#duplicate">
+        <%= t(".add_performance") %>
+      </button>
+      <%= form.submit nil, class: "btn btn-primary" %>
+    </div>
   </div>
 <% end %>
