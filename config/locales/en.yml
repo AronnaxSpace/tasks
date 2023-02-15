@@ -37,6 +37,8 @@ en:
       title: Tasks
     new:
       title: New task
+    form:
+      add_performance: Add performance
     edit:
       title: Editing task
     completed_performances:

@@ -1,0 +1,10 @@
+<div class="space-y-4">
+  <div class="form-field">
+    <label><%= t("activerecord.attributes.task_performance.start_at") %></label>
+    <input type="datetime-local" name="task[performances_attributes][][start_at]" id="task_performances_1_start_at" value="<%= performance.start_at.strftime("%FT%R") %>">
+  </div>
+  <div class="form-field">
+    <label><%= t("activerecord.attributes.task_performance.end_at") %></label>
+    <input type="datetime-local" name="task[performances_attributes][][end_at]" id="task_performances_1_end_at" value="<%= performance.end_at.strftime("%FT%R") %>">
+  </div>
+</div>

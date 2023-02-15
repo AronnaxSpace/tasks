@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import DuplicatorController from "./duplicator_controller"
+application.register("duplicator", DuplicatorController)
+
 import EraserController from "./eraser_controller"
 application.register("eraser", EraserController)
 
