@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resource :profile, only: %i[new edit create update]
   resources :task_sets, path: :sets
   resources :tasks do
     resources :task_performances, as: :performances, path: :performances, except: %i[show edit update] do

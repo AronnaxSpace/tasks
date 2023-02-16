@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :validatable, :omniauthable, omniauth_providers: %i[aronnax]
 
   # associations
+  has_one :profile
   has_many :task_sets, dependent: :destroy
   has_many :assigned_task_sets, class_name: 'TaskSet', foreign_key: :assignee_id, dependent: :nullify
   has_many :tasks, dependent: :destroy

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <%= render "layouts/head" %>
+
+  <body class="h-screen">
+    <div class="h-screen m-auto max-w-sm p-3 flex items-center">
+      <div class="">
+        <%= render "shared/flashes" %>
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
