@@ -2,7 +2,9 @@
   <h2><%= t(".title") %></h2>
 
   <% if @my_tasks.any? %>
-    <%= render @my_tasks %>
+    <div class="space-y-4">
+      <%= render @my_tasks %>
+    </div>
   <% else %>
     <%= t(".epmty") %>
   <% end %>

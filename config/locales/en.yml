@@ -9,9 +9,15 @@ en:
     back_to: Back to %{page}
     destroy: Destroy
 
+  helpers:
+    submit:
+      profile:
+        create: "Setup %{model}"
+
   shared:
     sidenav:
       dashboard: Dashboard
+      profile: Profile
       tasks: Tasks
       sign_out: Sign out
 
@@ -23,6 +29,12 @@ en:
       title: All Tasks
       epmty: You have not created any task yet.
       create_first_task: Create your first task
+
+  profiles:
+    create:
+      success: Profile was successfully created.
+    update:
+      success: Profile was successfully updated.
 
   task_sets:
     index:
