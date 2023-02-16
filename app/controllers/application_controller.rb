@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   include Pundit::Authorization
 
   before_action :authenticate_user!
+  before_action :setup_profile
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
@@ -26,5 +27,12 @@ class ApplicationController < ActionController::Base
 
   def user_not_authorized
     redirect_to root_path, alert: t('not_authorized')
+  end
+
+  def setup_profile
+    return unless user_signed_in?
+    return if current_user.profile
+
+    redirect_to new_profile_path
   end
 end
