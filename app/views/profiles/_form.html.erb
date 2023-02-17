@@ -1,7 +1,18 @@
 <%= form_with model: profile, url: profile_path, class: "form" do |form| %>
   <%= render "shared/errors", record: profile %>
 
+  <% if profile.avatar.attached? %>
+    <div class="mb-4">
+      <%= image_tag profile.avatar, class: "" %>
+    </div>
+  <% end %>
+
   <div class="space-y-4">
+    <div class="form-field">
+      <%= form.label :avatar, style: "display: block" %>
+      <%= form.file_field :avatar %>
+    </div>
+
     <div class="form-field">
       <%= form.label :nickname, style: "display: block" %>
       <%= form.text_field :nickname %>
