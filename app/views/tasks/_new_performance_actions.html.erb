@@ -1,14 +1,19 @@
 <div id="new_performance_actions" class="mb-4" data-controller="visibility eraser">
-  <%= link_to "Add performance",
-                  new_task_performance_path(@task),
-                  data: { turbo_frame: "new_task_performance_frame", action: "click->visibility#toggle touch->visibility#toggle", visibility_target: "dymanic" },
-                  class: "btn btn-primary" %>
-  <button class="btn btn-danger"
-          style="display: none"
-          data-action="click->visibility#toggle touch->visibility#toggle click->eraser#erase touch->eraser#erase"
-          data-visibility-target="dymanic">
-    Close
-  </button>
+  <div class="mb-2">
+    <%= link_to "Add performance",
+                    new_task_performance_path(@task),
+                    data: { turbo_frame: "new_task_performance_frame", action: "click->visibility#toggle touch->visibility#toggle", visibility_target: "dymanic" },
+                    class: "btn btn-primary" %>
+    <button class="btn btn-danger hidden"
+            data-action="click->visibility#toggle touch->visibility#toggle click->eraser#erase touch->eraser#erase"
+            data-visibility-target="dymanic">
+      Close
+    </button>
+  </div>
 
-  <%= turbo_frame_tag "new_task_performance_frame", data: { eraser_target: "erasable" } %>
+  <%= turbo_frame_tag "new_task_performance_frame", data: { eraser_target: "containsErasable" } do %>
+    <div class="hidden" data-visibility-target="dymanic">
+      <%= render "shared/loader" %>
+    </div>
+  <% end %>
 </div>

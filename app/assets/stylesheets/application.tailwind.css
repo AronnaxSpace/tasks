@@ -1,12 +1,12 @@
 @import "components/buttons";
 @import "components/card";
+@import "components/flash";
 @import "components/form";
+@import "components/loader";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* headings START */
 
 h1 {
   @apply font-medium leading-tight text-5xl mt-0 mb-2;
@@ -26,20 +26,4 @@ h4 {
 
 h5 {
   @apply text-gray-500 font-semibold;
-}
-
-/* headings END */
-
-/* flashs START */
-
-.flash {
-  @apply border px-4 py-3 my-3 rounded relative;
-}
-
-.flash.flash-notice {
-  @apply bg-green-100 border-green-400 text-green-700;
-}
-
-.flash.flash-alert {
-  @apply bg-red-100 border-red-400 text-red-700;
 }
