@@ -1,16 +1,14 @@
 <%= form_for task_performance, url: task_performances_path(task), html: { class: "form" } do |form| %>
   <%= render "shared/errors", record: task_performance %>
 
-  <div class="space-y-4">
-    <div class="form-field">
-      <%= form.label :start_at, style: "display: block" %>
-      <%= form.datetime_field :start_at %>
-    </div>
+  <div class="form-field">
+    <%= form.label :start_at, style: "display: block" %>
+    <%= form.datetime_field :start_at %>
+  </div>
 
-    <div class="form-field">
-      <%= form.label :end_at, style: "display: block" %>
-      <%= form.datetime_field :end_at %>
-    </div>
+  <div class="form-field">
+    <%= form.label :end_at, style: "display: block" %>
+    <%= form.datetime_field :end_at %>
   </div>
 
   <div class="mt-5">
