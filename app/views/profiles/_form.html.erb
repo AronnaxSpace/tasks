@@ -7,22 +7,20 @@
     </div>
   <% end %>
 
-  <div class="space-y-4">
-    <div class="form-field">
-      <%= form.label :avatar, style: "display: block" %>
-      <%= form.file_field :avatar %>
-    </div>
+  <div class="form-field">
+    <%= form.label :avatar, style: "display: block" %>
+    <%= form.file_field :avatar %>
+  </div>
 
-    <div class="form-field">
-      <%= form.label :nickname, style: "display: block" %>
-      <%= form.text_field :nickname %>
-    </div>
+  <div class="form-field">
+    <%= form.label :nickname, style: "display: block" %>
+    <%= form.text_field :nickname %>
+  </div>
 
-    <div class="form-field">
-      <%= form.label :time_zone, style: "display: block" %>
-      <%= form.time_zone_select :time_zone, ActiveSupport::TimeZone.all, { include_blank: true } %>
-      <p class="mt-[2px] text-gray-600 text-xs italic">If not selected UTC will be used.</p>
-    </div>
+  <div class="form-field">
+    <%= form.label :time_zone, style: "display: block" %>
+    <%= form.time_zone_select :time_zone, ActiveSupport::TimeZone.all, { include_blank: true } %>
+    <p class="mt-[2px] text-gray-600 text-xs italic">If not selected UTC will be used.</p>
   </div>
 
   <div class="text-center mt-5">
