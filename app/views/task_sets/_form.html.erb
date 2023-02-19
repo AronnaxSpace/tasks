@@ -16,7 +16,5 @@
     <%= form.select :assignee_id, User.all.map { |user| [user.nickname, user.id] }, { include_blank: true, selected: current_user.id }, class: "" %>
   </div>
 
-  <div class="form-field">
-    <%= form.submit nil, class: "btn btn-primary" %>
-  </div>
+  <%= form.submit nil, class: "btn btn-primary" %>
 <% end %>

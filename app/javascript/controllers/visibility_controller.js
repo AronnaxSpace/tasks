@@ -5,11 +5,7 @@ export default class extends Controller {
 
   toggle() {
     this.dymanicTargets.forEach(target => {
-      if (target.style.display === "none") {
-        target.style.removeProperty("display");
-      } else {
-        target.style.display = "none";
-      }
+      target.classList.toggle("hidden");
     });
   }
 }

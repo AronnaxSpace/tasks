@@ -2,6 +2,10 @@
   @apply max-w-xl;
 }
 
+.form .form-field {
+  @apply mb-4;
+}
+
 .form .form-field input:not([type=submit]),
 .form .form-field textarea,
 .form .form-field select {
