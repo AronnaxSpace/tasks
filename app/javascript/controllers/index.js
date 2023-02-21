@@ -10,6 +10,9 @@ application.register("duplicator", DuplicatorController)
 import EraserController from "./eraser_controller"
 application.register("eraser", EraserController)
 
+import ModalController from "./modal_controller"
+application.register("modal", ModalController)
+
 import SidenavController from "./sidenav_controller"
 application.register("sidenav", SidenavController)
 

@@ -18,6 +18,7 @@ en:
     sidenav:
       dashboard: Dashboard
       profile: Profile
+      projects: Projects
       tasks: Tasks
       sign_out: Sign out
 
@@ -35,6 +36,13 @@ en:
       success: Profile was successfully created.
     update:
       success: Profile was successfully updated.
+
+  projects:
+    index:
+      create_new_project: Create new project
+    show:
+      edit_project: Edit project
+      destroy_project: Destroy project
 
   task_sets:
     index:
