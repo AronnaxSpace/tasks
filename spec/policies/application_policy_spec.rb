@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 describe ApplicationPolicy do
   subject { described_class }
 

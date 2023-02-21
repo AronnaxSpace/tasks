@@ -1,5 +1,5 @@
 <%
-  aside_css = "fixed z-50 top-0 -left-60 bg-white lg:static w-60 h-full p-1 flex-shrink-0 border-r"
+  aside_css = "fixed z-10 top-0 -left-60 bg-white lg:static w-60 h-full p-1 flex-shrink-0 border-r"
   nav_css = "h-full overflow-y-auto"
   link_css = "flex items-center py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out"
   icon_css = "w-5 h-5 mr-3"
@@ -14,6 +14,10 @@
     <%= link_to edit_profile_path, class: link_css do %>
       <i class="fa-solid fa-address-card <%= icon_css %>"></i>
       <span><%= t(".profile") %></span>
+    <% end %>
+    <%= link_to projects_path, class: link_css do %>
+      <i class="fa-solid fa-diagram-project <%= icon_css %>"></i>
+      <span><%= t(".projects") %></span>
     <% end %>
     <%= link_to tasks_path, class: link_css do %>
       <i class="fa-solid fa-list-check <%= icon_css %>"></i>
