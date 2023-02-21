@@ -1,0 +1,9 @@
+<div id="project-info" class="card">
+  <p class="text-sm font-bold"><%= project.code %></p>
+  <h4 class="font-extralight mb-3"><%= project.name %></h4>
+
+  <div class="flex justify-between items-center">
+    <p class="text-sm font-thin">owner:</p>
+    <%= render "shared/profile", user: project.owner %>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<%= link_to t(".create_new_project"),
+            new_project_path,
+            class: "btn btn-primary mb-4",
+            data: { turbo_frame: "modal_content", action: "modal#open" } %>
+
+<%= turbo_frame_tag "projects", target: "_top", class: "grid grid-cols-3 gap-4" do %>
+  <%= render @projects %>
+<% end %>
