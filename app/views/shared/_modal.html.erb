@@ -1,0 +1,5 @@
+<div id="modal" data-modal-target="modal" class="hidden fixed z-20 top-0 left-0 grid items-center w-full h-full p-4 bg-gray-900 bg-opacity-50 overflow-y-auto" data-action="click->modal#close touch->modal#close">
+  <%= turbo_frame_tag :modal_content, class: "inline-block m-auto w-full max-w-lg p-8 bg-white rounded-lg" do %> 
+    <%= render "shared/loader" %>
+  <% end %>
+</div>

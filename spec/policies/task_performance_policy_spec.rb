@@ -1,5 +1,3 @@
-require 'rails_helper'
-
 describe TaskPerformancePolicy do
   subject { described_class }
 
