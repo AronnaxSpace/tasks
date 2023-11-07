@@ -6,6 +6,9 @@ class User < ApplicationRecord
 
   # associations
   has_one :profile
+  has_many :owned_projects, class_name: 'Project', foreign_key: :owner_id, inverse_of: :owner, dependent: :destroy
+  has_many :project_users
+  has_many :projects, through: :project_users
   has_many :task_sets, dependent: :destroy
   has_many :assigned_task_sets, class_name: 'TaskSet', foreign_key: :assignee_id, dependent: :nullify
   has_many :tasks, dependent: :destroy
@@ -26,6 +29,6 @@ class User < ApplicationRecord
   end
 
   def nickname
-    email.split('@').first
+    profile&.nickname || email.split('@').first
   end
 end
