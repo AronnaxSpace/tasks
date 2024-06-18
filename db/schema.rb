@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_17_152728) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_21_203434) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,6 +50,25 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_17_152728) do
     t.datetime "updated_at", null: false
     t.index ["nickname"], name: "index_profiles_on_nickname", unique: true
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "project_users", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_project_users_on_project_id"
+    t.index ["user_id"], name: "index_project_users_on_user_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "code", limit: 4
+    t.string "name", limit: 50
+    t.string "description"
+    t.bigint "owner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_id"], name: "index_projects_on_owner_id"
   end
 
   create_table "task_performances", force: :cascade do |t|
@@ -109,6 +128,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_17_152728) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "project_users", "projects"
+  add_foreign_key "project_users", "users"
+  add_foreign_key "projects", "users", column: "owner_id"
   add_foreign_key "task_performances", "tasks"
   add_foreign_key "task_performances", "users"
   add_foreign_key "task_sets", "users"
