@@ -1,0 +1,10 @@
+<div class="flex items-center">
+  <div class="mr-3 w-8 h-8 rounded-full overflow-hidden">
+    <% if user&.profile&.avatar&.attached? %>
+      <%= image_tag user.profile.avatar, class: "w-full h-full object-cover" %>
+    <% else %>
+      <i class="fa-solid fa-user"></i>
+    <% end %>
+  </div>
+  <span class="font-medium"><%= user.nickname %></span>
+</div>

@@ -2,7 +2,9 @@
 <html>
   <%= render "layouts/head" %>
 
-  <body class="h-screen">
+  <body class="h-screen" data-controller="modal">
+    <%= render "shared/modal_toggle" %>
+
     <div class="h-full container m-auto flex lg:border-x" data-controller="sidenav">
       <%= render "shared/sidenav" %>
       <div class="flex-grow overflow-y-auto relative">
@@ -13,5 +15,7 @@
         </div>
       </div>
     </div>
+
+    <%= render "shared/modal" %>
   </body>
 </html>
