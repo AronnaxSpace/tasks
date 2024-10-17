@@ -1,10 +1,10 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.2.1"
+ruby file: ".ruby-version"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.0.4", ">= 7.0.4.2"
+gem "rails", "~> 7.2", ">= 7.2.1"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -13,7 +13,7 @@ gem "sprockets-rails"
 gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 5.0"
+gem "puma", "~> 6.4", ">= 6.4.2"
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
@@ -80,5 +80,5 @@ gem "capistrano-rails", "~> 1.6"
 gem "capistrano-passenger", "~> 0.2.1"
 gem "capistrano-rbenv", "~> 2.2"
 gem "pundit", "~> 2.3"
-gem "sidekiq-scheduler", "~> 5.0"
+gem "sidekiq-scheduler", "~> 4.0", ">= 4.0.3"
 gem "aws-sdk-s3", "~> 1.119"
