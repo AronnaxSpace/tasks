@@ -4,6 +4,7 @@ class Profile < ApplicationRecord
 
   # validations
   validates :nickname, presence: true, uniqueness: true
+  validates :time_zone, inclusion: { in: ActiveSupport::TimeZone.all.map(&:name) }
   with_options if: -> { avatar.attached? } do
     validate :avatar_fit_allowed_size_and_has_corrent_format
   end
