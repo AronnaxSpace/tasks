@@ -3,5 +3,6 @@ FactoryBot.define do
     user
 
     nickname { Faker::Name.unique.name }
+    time_zone { "London" }
   end
 end
