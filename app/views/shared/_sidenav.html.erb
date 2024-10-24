@@ -11,19 +11,19 @@
       <i class="fa-solid fa-table-columns <%= icon_css %>"></i>
       <span><%= t(".dashboard") %></span>
     <% end %>
-    <%= link_to tasks_path, class: link_css do %>
-      <i class="fa-solid fa-list-check <%= icon_css %>"></i>
-      <span><%= t(".tasks") %></span>
-    <% end %>
-    <%= link_to edit_profile_path, class: link_css do %>
-      <i class="fa-solid fa-address-card <%= icon_css %>"></i>
-      <span><%= t(".profile") %></span>
-    <% end %>
-    <%= link_to projects_path, class: link_css do %>
-      <i class="fa-solid fa-diagram-project <%= icon_css %>"></i>
-      <span><%= t(".projects") %></span>
-    <% end %>
     <% if user_signed_in? %>
+      <%= link_to tasks_path, class: link_css do %>
+        <i class="fa-solid fa-list-check <%= icon_css %>"></i>
+        <span><%= t(".tasks") %></span>
+      <% end %>
+      <%= link_to projects_path, class: link_css do %>
+        <i class="fa-solid fa-diagram-project <%= icon_css %>"></i>
+        <span><%= t(".projects") %></span>
+      <% end %>
+      <%= link_to edit_profile_path, class: link_css do %>
+        <i class="fa-solid fa-address-card <%= icon_css %>"></i>
+        <span><%= t(".profile") %></span>
+      <% end %>
       <%= button_to destroy_user_session_path,
                     method: :delete,
                     data: { turbo: false },
