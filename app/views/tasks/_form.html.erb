@@ -12,16 +12,11 @@
   </div>
 
   <div class="form-field">
-    <%= form.label :task_set_id, style: "display: block" %>
-    <%= form.select :task_set_id, TaskSet.pluck(:title, :id), { include_blank: true }, class: "" %>
-  </div>
-
-  <div class="form-field">
     <%= form.label :assignee_id, style: "display: block" %>
     <%= form.select :assignee_id, User.all.map { |user| [user.nickname, user.id] }, { include_blank: true, selected: task.assignee_id || current_user.id }, class: "" %>
   </div>
 
-  <% if action_name == "new" %>
+  <% if action_name.in? %w[new create] %>
     <div data-controller="duplicator">
       <%= render "task_performance_form", task: task %>
 

@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
   before_action :setup_profile
+  around_action :set_time_zone, if: :current_user
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
@@ -34,5 +35,12 @@ class ApplicationController < ActionController::Base
     return if current_user.profile
 
     redirect_to new_profile_path
+  end
+
+  def set_time_zone(&block)
+    time_zone = current_user.profile&.time_zone
+    return unless time_zone.present?
+
+    Time.use_zone(time_zone, &block)
   end
 end
