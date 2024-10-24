@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   skip_before_action :setup_profile, only: %i[new create]
+  skip_around_action :set_time_zone, only: %i[new create]
   before_action :check_profile, only: %i[new create]
   before_action :convert_avatar, only: %i[create update]
 

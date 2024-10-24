@@ -16,6 +16,6 @@
     <% end %>
   <% else %>
     <% performance_struct = Struct.new(:start_at, :end_at) %>
-    <%= render "task_performance_form_block", performance: performance_struct.new(Time.current, Time.current + 2.hours) %>
+    <%= render "task_performance_form_block", performance: performance_struct.new(current_user_time, current_user_time + 2.hours) %>
   <% end %>
 </div>
