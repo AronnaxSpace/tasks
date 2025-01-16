@@ -294,6 +294,8 @@ GEM
     rdoc (6.10.0)
       psych (>= 4.0.0)
     redis (4.8.1)
+    redis-namespace (1.11.0)
+      redis (>= 4)
     reline (0.6.0)
       io-console (~> 0.5)
     responders (3.1.1)
@@ -408,6 +410,7 @@ DEPENDENCIES
   pundit (~> 2.3)
   rails (~> 7.2, >= 7.2.1)
   redis (~> 4.0)
+  redis-namespace (~> 1.11)
   rspec-rails (~> 6.0)
   shoulda-matchers
   sidekiq-scheduler (~> 4.0, >= 4.0.3)
