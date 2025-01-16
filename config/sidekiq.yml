@@ -10,8 +10,7 @@ production:
 staging:
   :concurrency: 15
 
-:scheduler:
-  :schedule:
-    expire_task_performances:
-      cron: '0 */2 * * *' # every 2 hours
-      class: ExpireTaskPerformancesJob
+:schedule:
+  expire_task_performances:
+    cron: '0 */2 * * *' # every 2 hours
+    class: ExpireTaskPerformancesJob
