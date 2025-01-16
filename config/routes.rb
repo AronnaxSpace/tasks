@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   authenticated :user do
     if defined?(Sidekiq)
       require 'sidekiq/web'
+      require 'sidekiq-scheduler/web'
       mount Sidekiq::Web => '/sidekiq'
     end
   end
