@@ -20,6 +20,7 @@ en:
       profile: Profile
       projects: Projects
       tasks: Tasks
+      users: Users
       sign_out: Sign out
 
   dashboard:

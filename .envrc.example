@@ -1,6 +1,3 @@
-export TASKS_DATABASE_USERNAME=postgres
-export TASKS_DATABASE_PASSWORD=postgres
-
 export ARONNAX_APP_ID=aronnax_app_id
 export ARONNAX_APP_SECRET=aronnax_app_secret
 export ARONNAX_APP_URL=aronnax_app_url

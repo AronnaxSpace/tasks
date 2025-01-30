@@ -24,6 +24,12 @@
         <i class="fa-solid fa-address-card <%= icon_css %>"></i>
         <span><%= t(".profile") %></span>
       <% end %>
+      <% if current_user.admin? %>
+        <%= link_to admin_users_path, class: link_css do %>
+          <i class="fa-solid fa-users <%= icon_css %>"></i>
+          <span><%= t(".users") %></span>
+        <% end %>
+      <% end %>
       <%= button_to destroy_user_session_path,
                     method: :delete,
                     data: { turbo: false },

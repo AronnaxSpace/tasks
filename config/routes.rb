@@ -5,12 +5,16 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
-  authenticated :user do
+  authenticated :user, lambda { |user| user.admin? } do
     if defined?(Sidekiq)
       require 'sidekiq/web'
       require 'sidekiq-scheduler/web'
       mount Sidekiq::Web => '/sidekiq'
     end
+  end
+
+  namespace :admin do
+    resources :users, only: %i[index]
   end
 
   resource :profile, only: %i[new edit create update]
